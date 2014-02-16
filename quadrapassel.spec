@@ -1,12 +1,12 @@
 Summary:	GNOME Tetris
 Summary(pl.UTF-8):	Tetris dla GNOME
 Name:		quadrapassel
-Version:	3.8.0
+Version:	3.10.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/quadrapassel/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	3b5b927fb35619482235360c12acfe68
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/quadrapassel/3.10/%{name}-%{version}.tar.xz
+# Source0-md5:	bc5c70e5fc5951f6c38f750496fc8747
 URL:		https://live.gnome.org/Quadrapassel
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.11
@@ -43,7 +43,9 @@ Gra podobna do Tetrisa.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--disable-silent-rules
+
 %{__make}
 
 %install
@@ -71,6 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS
 %attr(755,root,root) %{_bindir}/quadrapassel
+%{_datadir}/appdata/quadrapassel.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.quadrapassel.gschema.xml
 %{_datadir}/quadrapassel
 %{_desktopdir}/quadrapassel.desktop
