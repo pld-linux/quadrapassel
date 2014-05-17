@@ -1,12 +1,12 @@
 Summary:	GNOME Tetris
 Summary(pl.UTF-8):	Tetris dla GNOME
 Name:		quadrapassel
-Version:	3.12.1
+Version:	3.12.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/quadrapassel/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	5a91b6d17a1792d0b912845811d72e73
+# Source0-md5:	811bf8a8d30c245ec4a1ec599a115b76
 URL:		https://wiki.gnome.org/Apps/Quadrapassel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
