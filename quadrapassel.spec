@@ -1,9 +1,9 @@
-Summary:	GNOME Tetris
-Summary(pl.UTF-8):	Tetris dla GNOME
+Summary:	Quadrapassel - Tetris-like game for GNOME
+Summary(pl.UTF-8):	Quadrapassel - podobna do Tetrisa gra dla GNOME
 Name:		quadrapassel
 Version:	3.12.2
 Release:	1
-License:	GPL v2
+License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/quadrapassel/3.12/%{name}-%{version}.tar.xz
 # Source0-md5:	811bf8a8d30c245ec4a1ec599a115b76
@@ -22,7 +22,12 @@ BuildRequires:	vala >= 2:0.16.0
 BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.26.0
 Requires(post,postun):	gtk-update-icon-cache
+Requires:	clutter >= 1.0.0
+Requires:	clutter-gtk >= 0.91.6
+Requires:	gtk+3 >= 3.10.0
 Requires:	hicolor-icon-theme
+Requires:	libcanberra-gtk3 >= 0.26
+Requires:	librsvg >= 2.32.0
 Provides:	gnome-games-gnometris
 Provides:	gnome-games-quadrapassel = 1:%{version}-%{release}
 Obsoletes:	gnome-games-gnometris
@@ -30,10 +35,14 @@ Obsoletes:	gnome-games-quadrapassel < 1:3.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Tetris like game.
+Quadrapassel comes from the classic falling-block game, Tetris. The
+goal of the game is to create complete horizontal lines of blocks,
+which will disappear. 
 
 %description -l pl.UTF-8
-Gra podobna do Tetrisa.
+Quadrapassel wywodzi się z Tetrisa - klasycznej gry ze spadającymi
+blokami. Celem jest tworzenie zapełnionych blokami poziomych rzędów,
+które wtedy znikają.
 
 %prep
 %setup -q
@@ -77,7 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.quadrapassel.gschema.xml
 %{_datadir}/quadrapassel
 %{_desktopdir}/quadrapassel.desktop
-%{_iconsdir}/HighContrast/*/*/*.png
-%{_iconsdir}/hicolor/*/*/*.png
-%{_iconsdir}/hicolor/*/*/*.svg
+%{_iconsdir}/HighContrast/*/apps/quadrapassel.png
+%{_iconsdir}/hicolor/*/apps/quadrapassel.png
+%{_iconsdir}/hicolor/scalable/apps/quadrapassel.svg
 %{_mandir}/man6/quadrapassel.6*
