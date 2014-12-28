@@ -12,7 +12,7 @@ BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.0.0
 BuildRequires:	clutter-gtk-devel >= 0.91.6
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-common
 BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	intltool >= 0.50.0
