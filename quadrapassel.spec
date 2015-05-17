@@ -8,6 +8,7 @@ Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/quadrapassel/3.16/%{name}-%{version}.tar.xz
 # Source0-md5:	bbed3e2e4a2da457d8c2ca26d1945919
 URL:		https://wiki.gnome.org/Apps/Quadrapassel
+BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.0.0
@@ -84,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.quadrapassel.gschema.xml
 %{_datadir}/quadrapassel
 %{_desktopdir}/quadrapassel.desktop
-%{_iconsdir}/hicolor/*/apps/quadrapassel.png
-%{_iconsdir}/hicolor/*/apps/*.svg
+%{_iconsdir}/hicolor/*x*/apps/quadrapassel.png
+%{_iconsdir}/hicolor/scalable/apps/quadrapassel.svg
+%{_iconsdir}/hicolor/symbolic/apps/quadrapassel-symbolic.svg
 %{_mandir}/man6/quadrapassel.6*
