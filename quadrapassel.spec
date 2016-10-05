@@ -1,12 +1,12 @@
 Summary:	Quadrapassel - Tetris-like game for GNOME
 Summary(pl.UTF-8):	Quadrapassel - podobna do Tetrisa gra dla GNOME
 Name:		quadrapassel
-Version:	3.18.0
+Version:	3.22.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/quadrapassel/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	f543bc84cce510acfe173d174d9d5d35
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/quadrapassel/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	eaeeb11697468d69ca4031d0003f7713
 URL:		https://wiki.gnome.org/Apps/Quadrapassel
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
