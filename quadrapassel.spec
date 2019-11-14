@@ -1,33 +1,43 @@
 Summary:	Quadrapassel - Tetris-like game for GNOME
 Summary(pl.UTF-8):	Quadrapassel - podobna do Tetrisa gra dla GNOME
 Name:		quadrapassel
-Version:	3.22.0
+Version:	3.34.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/quadrapassel/3.22/%{name}-%{version}.tar.xz
-# Source0-md5:	eaeeb11697468d69ca4031d0003f7713
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/quadrapassel/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	c24489c9232f54c9ccbd15be2f3fe709
 URL:		https://wiki.gnome.org/Apps/Quadrapassel
-BuildRequires:	appstream-glib-devel
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
+BuildRequires:	appstream-glib
 BuildRequires:	clutter-devel >= 1.0.0
 BuildRequires:	clutter-gtk-devel >= 0.91.6
+BuildRequires:	cogl-devel >= 1.0
 BuildRequires:	gettext-tools
+BuildRequires:	gsound-devel >= 1.0.2
 BuildRequires:	gtk+3-devel >= 3.12.0
-BuildRequires:	intltool >= 0.50.0
-BuildRequires:	libcanberra-gtk3-devel >= 0.26
-BuildRequires:	librsvg-devel >= 2.32.0
+BuildRequires:	libmanette-devel >= 0.2.0
+BuildRequires:	librsvg-devel >= 1:2.32.0
+BuildRequires:	meson
+BuildRequires:	ninja >= 1.5
+BuildRequires:	pango-devel >= 1:1.12
+BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
+BuildRequires:	vala-gsound >= 1.0.2
+BuildRequires:	vala-libmanette >= 0.2.0
+BuildRequires:	vala-librsvg >= 1:2.32.0
+BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.26.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	clutter >= 1.0.0
 Requires:	clutter-gtk >= 0.91.6
+Requires:	gsound >= 1.0.2
 Requires:	gtk+3 >= 3.12.0
 Requires:	hicolor-icon-theme
-Requires:	libcanberra-gtk3 >= 0.26
-Requires:	librsvg >= 2.32.0
+Requires:	libmanette >= 0.2.0
+Requires:	librsvg >= 1:2.32.0
 Provides:	gnome-games-gnometris
 Provides:	gnome-games-quadrapassel = 1:%{version}-%{release}
 Obsoletes:	gnome-games-gnometris
@@ -48,20 +58,14 @@ które wtedy znikają.
 %setup -q
 
 %build
-%{__intltoolize}
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure \
-	--disable-silent-rules
+%meson build
 
-%{__make}
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{name} --with-gnome
 
@@ -78,13 +82,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc NEWS
+%doc NEWS README.md
 %attr(755,root,root) %{_bindir}/quadrapassel
-%{_datadir}/appdata/quadrapassel.appdata.xml
-%{_datadir}/glib-2.0/schemas/org.gnome.quadrapassel.gschema.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.Quadrapassel.gschema.xml
+%{_datadir}/metainfo/org.gnome.Quadrapassel.appdata.xml
 %{_datadir}/quadrapassel
-%{_desktopdir}/quadrapassel.desktop
-%{_iconsdir}/hicolor/*x*/apps/quadrapassel.png
-%{_iconsdir}/hicolor/scalable/apps/quadrapassel.svg
-%{_iconsdir}/hicolor/symbolic/apps/quadrapassel-symbolic.svg
+%{_desktopdir}/org.gnome.Quadrapassel.desktop
+%{_iconsdir}/hicolor/*x*/apps/org.gnome.Quadrapassel.png
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Quadrapassel.svg
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.Quadrapassel-symbolic.svg
 %{_mandir}/man6/quadrapassel.6*
