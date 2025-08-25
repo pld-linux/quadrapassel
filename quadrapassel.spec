@@ -22,7 +22,7 @@ BuildRequires:	ninja >= 1.5
 BuildRequires:	pango-devel >= 1:1.12
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
 BuildRequires:	vala-gsound >= 1.0.2
